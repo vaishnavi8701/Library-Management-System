@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Library Management System</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+     <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    </head>
+    <body style="background-image: url('/assests/bgimg.jpg'); background-repeat: no-repeat;  background-attachment: fixed; background-size: cover;">
+        <div class="container">
+        <h1 style="text-align: center;">LIBRARY MANAGEMENT SYSTEM</h1>
+        </div>
+        
+<div style="text-align: center;" class="alert alert-primary" role="alert" th:text="${success}" th:if="${success}"></div>
+<div style="text-align: center;" class="alert alert-danger" role="alert" th:text="${error}" th:if="${error}"></div>
+        <div class="container" style="margin-bottom:60px;margin-top:60px">
+        <h2 style="text-align: center;"><i> <q> Nothing is pleasanter than exploring a library</q></i></h2>
+        </div>
+    <div class="container">
+       
+      <section id="content">
+       <form th:action="@{/login}" th:object="${user}" method="post" id="loginform">
+          <h1>Login Form</h1>
+          <div>
+            <input type="text" th:field="*{email}" placeholder="Email" required="" id="username" />
+          </div>
+          <div>
+            <input type="password" th:field="*{password}" placeholder="Password" required="" id="password" />
+          </div>
+          <div>
+            <input class="btn btn-default submit" type="submit" value="Log in" onclick="document.getElementById('loginform').submit();"/>
+            
+            <a href="#">Lost your password?</a>
+            <a href="#">Register</a>
+          </div>
+        </form><!-- form -->
+        
+      </section><!-- content -->
+    </div><!-- container -->
+    </body>
+</html>
